@@ -88,44 +88,6 @@
   color: var(--dark);
 }
 
-.secret-passage {
-  background-color: var(--red);
-  width: 100vw;
-  height: 100vh;
-  padding: 10vmin;
-}
-
-.secret-passage__main {
-  background-color: white;
-  width: 70vw;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 5vmax;
-}
-
-input {
-  display: block;
-  margin: 0 auto 2vmax;
-  border: 1px solid var(--blue);
-  border-radius: 2px;
-  padding: 0.2em 0.5em;
-  outline: 1px solid var(--blue);
-}
-
-input:focus {
-  outline-width: 3px;
-}
-
-.secret-passage__btn {
-  background-color: var(--blue);
-  color: white;
-  transition: transform var(--transition);
-}
-.secret-passage__btn:hover {
-  transform: scale(1.1);
-}
-
 :root {
   --accent: #f5a400;
   --primary: rgb(236, 5, 52);
@@ -147,7 +109,7 @@ input:focus {
 }
 @media (min-width: 920px) {
   :root {
-    --font-size: 1.25rem;
+    --font-size: 1rem;
   }
 }
 
@@ -304,7 +266,6 @@ a:focus-visible {
 /* project specific styles */
 body {
   font-family: "Playfair Display", serif;
-  font-size: var(--font-size);
   min-height: 100vh;
 }
 
@@ -346,10 +307,10 @@ header h1 .square {
   width: 0.5em;
   display: inline-block;
   margin-bottom: 0.125rem;
-  margin-right: var(--font-size);
+  margin-right: 1em;
 }
 header h1 .square:last-of-type {
-  margin-left: var(--font-size);
+  margin-left: 1em;
 }
 header .main {
   width: -webkit-fit-content;
@@ -388,7 +349,7 @@ header .main p [data-span=nonsense] {
 }
 .content .content-wrapper h2 {
   font-family: var(--handwritten);
-  font-size: calc(var(--font-size) * 1.75);
+  font-size: 1.75rem;
   color: var(--accent);
   position: relative;
   z-index: 2;
@@ -398,7 +359,7 @@ header .main p [data-span=nonsense] {
   place-items: center;
 }
 .content .content-wrapper .selfie-wrapper .face {
-  --size: 12rem;
+  --size: 10rem;
   background-color: white;
   width: var(--size);
   height: var(--size);
@@ -412,7 +373,7 @@ header .main p [data-span=nonsense] {
 .content .content-wrapper .selfie-wrapper .face .eyes {
   display: flex;
   justify-content: center;
-  gap: 5.5rem;
+  gap: calc(var(--size) * 0.45);
   position: absolute;
   left: 0;
   right: 0;
@@ -456,6 +417,8 @@ header .main p [data-span=nonsense] {
           animation-name: falling-glasses;
   -webkit-animation-duration: 6s;
           animation-duration: 6s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -467,7 +430,7 @@ header .main p [data-span=nonsense] {
 }
 .content .content-wrapper .project-wrapper {
   aspect-ratio: 16/9;
-  flex-basis: 45%;
+  flex-basis: 30%;
   margin: 0.5rem;
   opacity: 0.8;
   transition: opacity 250ms ease-in;
@@ -495,8 +458,8 @@ header .main p [data-span=nonsense] {
     display: flex;
     flex-wrap: wrap;
   }
-  .content .content-wrapper .projects-wrapper > * {
-    flex-basis: 30%;
+  .content .content-wrapper .projects-wrapper .project-wrapper {
+    flex-basis: 25%;
   }
 }
 
@@ -516,11 +479,11 @@ footer .contact-wrapper {
 }
 @media (min-width: 768px) {
   footer .contact-wrapper {
-    padding: 0.5rem 0.75rem 0.25rem;
+    padding: 0.25rem 0.375rem 0.125rem;
     margin-inline: 1rem;
   }
   footer .contact-wrapper svg {
-    --svg: 1.5rem;
+    --svg: 1.25rem;
     width: var(--svg);
     height: var(--svg);
   }

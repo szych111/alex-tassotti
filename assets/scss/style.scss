@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
 @import "slider";
 @import "projects";
-@import "secret-passage";
 @import "utility-classes";
 
 *,
@@ -55,7 +54,7 @@ a:focus-visible {
 
 body {
   font-family: "Playfair Display", serif;
-  font-size: var(--font-size);
+  // font-size: var(--font-size);
   min-height: 100vh;
 }
 
@@ -102,10 +101,10 @@ header {
       width: 0.5em;
       display: inline-block;
       margin-bottom: 0.125rem;
-      margin-right: var(--font-size);
+      margin-right: 1em;
 
       &:last-of-type {
-        margin-left: var(--font-size);
+        margin-left: 1em;
       }
     }
   }
@@ -159,7 +158,7 @@ header {
   .content-wrapper {
     h2 {
       font-family: var(--handwritten);
-      font-size: calc(var(--font-size) * 1.75);
+      font-size: 1.75rem;
       color: var(--accent);
       position: relative;
       z-index: 2;
@@ -170,7 +169,7 @@ header {
       place-items: center;
 
       .face {
-        --size: 12rem;
+        --size: 10rem;
 
         background-color: white;
         width: var(--size);
@@ -186,7 +185,7 @@ header {
         .eyes {
           display: flex;
           justify-content: center;
-          gap: 5.5rem;
+          gap: calc(var(--size) * .45);
           position: absolute;
           left: 0;
           right: 0;
@@ -229,6 +228,7 @@ header {
           transform-origin: center left;
           animation-name: falling-glasses;
           animation-duration: 6s;
+          animation-delay: 5s;
           animation-iteration-count: infinite;
           animation-fill-mode: forwards;
         }
@@ -242,7 +242,7 @@ header {
 
     .project-wrapper {
       aspect-ratio: 16/9;
-      flex-basis: 45%;
+      flex-basis: 30%;
       margin: .5rem;
       opacity: .8;
       transition: opacity 250ms ease-in;
@@ -274,8 +274,8 @@ header {
         display: flex;
         flex-wrap: wrap;
 
-        &>* {
-          flex-basis: 30%;
+        .project-wrapper {
+          flex-basis: 25%;
         }
       }
     }
@@ -297,11 +297,11 @@ footer {
     display: inline-block;
 
     @media (min-width: 768px) {
-      padding: .5rem .75rem .25rem;
+      padding: .25rem .375rem .125rem;
       margin-inline: 1rem;
 
       svg {
-        --svg: 1.5rem;
+        --svg: 1.25rem;
         width: var(--svg);
         height: var(--svg);
       }
