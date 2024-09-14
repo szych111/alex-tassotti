@@ -1,18 +1,31 @@
-const passionsWrapper = document.querySelector("[data-span=passions]");
+//import Swiper from "swiper";
+//import Swiper from "../../node_modules/swiper";
+//import { Navigation } from "../../node_modules/swiper/modules/navigation";
+//const swiper = new Swiper(".swiper", {
+  //modules: [Navigation],
+  //loop: true,
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
+  //autoplay: true,
+//});
+
+const jobsWrapper = document.querySelector("[data-span=jobs]");
 const virtuesWrapper1 = document.querySelector("[data-span=virtues-1]");
 const virtuesWrapper2 = document.querySelector("[data-span=virtues-2]");
 const placesWrapper = document.querySelector("[data-span=places]");
 //const nonsenseWrapper = document.querySelector("[data-span=nonsense]");
 //const senseWrapper = document.querySelector("[data-span=sense]");
-const passions = ["user experience", "user interface", "UX/UI"];
+const jobs = ["Front-End", "Web", "React", "JavaScript"];
 //const virtues = ["disciplined", "creative"];
-const places = ["where it's earlier", "where it's sunnier", "else"];
+const places = ["web sites", "applications", "web designs"];
 const future = ["programming-guru", "triathlonist", "gardener"];
 
 let counter = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
-  passionsWrapper.textContent = passions[counter];
+  jobsWrapper.textContent = jobs[counter];
   //virtuesWrapper1.textContent = virtues[counter];
   //virtuesWrapper2.textContent = virtues[counter + 1];
   placesWrapper.textContent = places[counter];
@@ -51,7 +64,7 @@ function spanChanger(span, array) {
   });
 }
 
-spanChanger(passionsWrapper, passions);
+spanChanger(jobsWrapper, jobs);
 // spanChanger(virtuesWrapper1, virtues);
 // spanChanger(virtuesWrapper2, virtues);
 spanChanger(placesWrapper, places);

@@ -1,0 +1,72 @@
+
+.selfie-wrapper {
+  display: grid;
+  place-items: center;
+
+  .face {
+    --size: 13.5rem;
+
+    background-color: white;
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+    border: 1px solid var(--semi-accent);
+    border-top: .75rem solid var(--semi-accent);
+    //box-shadow: 1px 1px 2px rgba(236, 5, 52, .4);
+
+    &,
+    .bun {
+      border-radius: 50%;
+    }
+
+    .eyes {
+      display: flex;
+      justify-content: center;
+      gap: calc(var(--size) * .45);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 35%;
+      animation-name: winking;
+      animation-duration: 2500ms;
+      animation-iteration-count: infinite;
+      transition-timing-function: cubic-bezier(0.1, 0.1, 0.8);
+
+      &>* {
+        width: calc(.085 * var(--size));
+        height: calc(.085 * var(--size));
+        background-color: black;
+        border-radius: 50%;
+      }
+    }
+
+    .bun {
+      --gauge: .6;
+      background-color: var(--accent);
+      width: calc(var(--size) * var(--gauge));
+      height: calc(var(--size) * var(--gauge));
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    .bun,
+    .glasses {
+      position: absolute;
+    }
+
+    .glasses {
+      fill: var(--primary);
+      width: 110%;
+      left: -5%;
+      top: -20%;
+      transform-origin: center left;
+      animation-name: falling-glasses;
+      animation-duration: 6s;
+      animation-delay: 5s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+    }
+  }
+}
