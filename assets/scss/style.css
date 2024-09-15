@@ -68,7 +68,7 @@
 }
 .projects .project {
   border-bottom: 6px solid var(--accent);
-  padding-block: 2em;
+  padding-top: 2em;
 }
 .projects .project-details,
 .projects .project-header {
@@ -77,7 +77,10 @@
 }
 .projects .project-details {
   margin-top: 2em;
-  display: none;
+  transform: scaleY(0);
+  transform-origin: top;
+  height: 0;
+  transition: all 500ms;
 }
 .projects .project-details img {
   width: 100%;
@@ -90,7 +93,12 @@
   border-bottom: 0;
 }
 .projects .project.active .project-details {
-  display: flex;
+  transform: scaleY(1);
+  height: 100%;
+  margin-bottom: 2rem;
+}
+.projects .project.active .toggler {
+  transform: translateY(-0.75rem) rotate(180deg);
 }
 .projects .project__description {
   color: white;
@@ -117,33 +125,27 @@
 }
 .projects .project-header h4 {
   font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.25rem;
 }
 .projects .project-header h3 {
   font-size: clamp(1.5rem, 1.5rem + 1vw, 3.5rem);
   font-weight: 900;
 }
-.projects .project-header .h3 {
+.projects .project-header .toggler {
   --size: 1.5rem;
-  --border: .75rem;
+  --border: calc(var(--size) * .5);
   color: var(--accent);
   background-color: var(--primary);
   margin-bottom: 0.75rem;
   width: var(--size);
   height: var(--size);
+  border: var(--border) solid white;
+  border-top: var(--border) solid var(--primary);
   cursor: pointer;
+  transition: transform 500ms ease, opacity 300ms;
 }
-.projects .project-header .h3:hover {
-  -webkit-animation-name: rotate;
-          animation-name: rotate;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
+.projects .project-header .toggler:hover {
+  color: pink;
 }
 @-webkit-keyframes rotate {
   100% {

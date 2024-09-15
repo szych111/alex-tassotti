@@ -1,14 +1,33 @@
+const projectDetailsTogglers = document.querySelectorAll(".toggler");
+const projects = document.querySelectorAll(".project");
+
+projectDetailsTogglers.forEach((toggler) => {
+  toggler.addEventListener("click", () => {
+    let currentProject = toggler.closest(".project");
+
+    projects.forEach((project) => {
+      if (project !== currentProject && project.classList.contains("active")) {
+        project.classList.remove("active");
+      }
+    });
+
+    setTimeout(() => {
+      currentProject.classList.toggle("active");
+    }, 400);
+  });
+});
+
 //import Swiper from "swiper";
 //import Swiper from "../../node_modules/swiper";
 //import { Navigation } from "../../node_modules/swiper/modules/navigation";
 //const swiper = new Swiper(".swiper", {
-  //modules: [Navigation],
-  //loop: true,
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
-  //autoplay: true,
+//modules: [Navigation],
+//loop: true,
+// navigation: {
+//   nextEl: ".swiper-button-next",
+//   prevEl: ".swiper-button-prev",
+// },
+//autoplay: true,
 //});
 
 const jobsWrapper = document.querySelector("[data-span=jobs]");
