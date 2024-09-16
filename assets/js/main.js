@@ -11,9 +11,7 @@ projectDetailsTogglers.forEach((toggler) => {
       }
     });
 
-    setTimeout(() => {
-      currentProject.classList.toggle("active");
-    }, 400);
+    currentProject.classList.toggle("active");
   });
 });
 
