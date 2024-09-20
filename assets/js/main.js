@@ -1,4 +1,4 @@
-const projectDetailsTogglers = document.querySelectorAll(".toggler");
+const projectDetailsTogglers = document.querySelectorAll(".project__header");
 const projects = document.querySelectorAll(".project");
 
 projectDetailsTogglers.forEach((toggler) => {

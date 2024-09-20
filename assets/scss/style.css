@@ -64,88 +64,48 @@
 }
 .projects h2 {
   font-size: clamp(2rem, 2rem + 1vw, 2.75rem);
-  color: var(--primary);
 }
 .projects .project {
   border-bottom: 6px solid var(--accent);
-  padding-top: 2em;
+  padding-block: 2em;
 }
-.projects .project .project-header {
+.projects .project .project__header {
   display: flex;
   justify-content: space-between;
-}
-.projects .project .project-details {
-  margin-top: 2em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0;
-  transition: grid-template-rows 500ms;
-  transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
-  overflow: hidden;
-}
-.projects .project .project-details img {
-  width: 100%;
-}
-.projects .project .project-details > div {
-  flex-basis: 50%;
-  flex-grow: 1;
-}
-.projects .project.active {
-  border-bottom: 0;
-}
-.projects .project.active .project-details {
-  grid-template-rows: 1fr;
-  margin-bottom: 2rem;
-}
-.projects .project.active .toggler {
-  transform: translateY(-0.75rem) rotate(180deg);
-}
-.projects .project__description {
-  color: white;
-  background-color: var(--primary);
-  padding: 1em;
-}
-.projects .project__description p {
-  margin-bottom: 2em;
-}
-.projects .project__description a {
-  text-decoration: underline;
-  text-transform: uppercase;
-}
-.projects .project-header {
   color: var(--primary);
   font-family: "Lato", sans-serif;
   align-items: end;
-  padding-right: 0.5rem;
+  padding: 0 0.5rem 2rem 0;
+  cursor: pointer;
 }
-.projects .project-header h3,
-.projects .project-header h4 {
+.projects .project .project__header h3,
+.projects .project .project__header h4 {
   margin: 0;
   line-height: 1;
 }
-.projects .project-header h4 {
+.projects .project .project__header h4 {
   font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
-.projects .project-header h3 {
-  font-size: clamp(1.5rem, 1.5rem + 1vw, 3.5rem);
+.projects .project .project__header h3 {
+  font-size: clamp(1.5rem, 1.5rem + 3.5vw, 4rem);
   font-weight: 900;
 }
-.projects .project-header .toggler {
-  --size: 1.5rem;
-  --border: calc(var(--size) * .5);
-  color: var(--accent);
-  background-color: var(--primary);
-  margin-bottom: 0.75rem;
+.projects .project .project__header .toggler {
+  --size: 3.5rem;
   width: var(--size);
-  height: var(--size);
-  border: var(--border) solid white;
-  border-top: var(--border) solid var(--primary);
-  cursor: pointer;
-  transition: transform 500ms ease, opacity 300ms;
+  height: 66px;
+  padding-block: 0;
 }
-.projects .project-header .toggler:hover {
-  color: pink;
+.projects .project .project__header .toggler .toggler__upper,
+.projects .project .project__header .toggler .toggler__lower {
+  transition: all 500ms ease;
+}
+.projects .project .project__header .toggler .toggler__upper {
+  transform: translateY(0.5rem);
+}
+.projects .project .project__header .toggler .toggler__lower {
+  transform: translateY(-2rem);
 }
 @-webkit-keyframes rotate {
   100% {
@@ -155,6 +115,89 @@
 @keyframes rotate {
   100% {
     transform: rotate(180deg);
+  }
+}
+.projects .project .project__details {
+  display: grid;
+  grid-template-rows: 0;
+  transition: grid-template-rows 500ms;
+  transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
+  overflow: hidden;
+}
+.projects .project .project__details .project__details__image {
+  height: 377px;
+  background-size: cover;
+  background-position: center;
+}
+.projects .project .project__details .project__details__description {
+  color: white;
+  background-color: var(--primary);
+  padding: 1em;
+}
+.projects .project .project__details .project__details__description p {
+  margin-bottom: 2em;
+}
+.projects .project .project__details .project__details__description a {
+  text-decoration: underline;
+  text-transform: toggler__uppercase;
+}
+.projects #projects-parle .project__details__image {
+  background-image: url("../../videos/parle-hover.jpg");
+}
+.projects #projects-parle.project.active .project__details__image {
+  -webkit-animation: presentation infinite alternate 6s;
+          animation: presentation infinite alternate 6s;
+}
+@-webkit-keyframes presentation {
+  35% {
+    background-image: url("../../videos/parle-middle.jpg");
+  }
+  65% {
+    background-image: url("../../videos/parle-last.jpg");
+  }
+}
+@keyframes presentation {
+  35% {
+    background-image: url("../../videos/parle-middle.jpg");
+  }
+  65% {
+    background-image: url("../../videos/parle-last.jpg");
+  }
+}
+.projects .project.active {
+  border-bottom: 0;
+}
+.projects .project.active .project__details {
+  grid-template-rows: 2fr;
+  margin-bottom: 2rem;
+}
+.projects .project.active .toggler {
+  transform: translateY(0.125rem) rotate(180deg);
+}
+.projects .project.active .project__header {
+  color: var(--accent);
+}
+
+@media (min-width: 960px) {
+  .projects .project .project__details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0;
+    transition: grid-template-rows 500ms;
+    transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
+    overflow: hidden;
+  }
+  .projects .project .project__details .project__details__image {
+    height: 377px;
+    background-size: cover;
+    background-position: center;
+  }
+  .projects .project .project__details .project__details__description {
+    padding: 4rem;
+  }
+  .projects .project .project.active .project__details {
+    grid-template-rows: 1fr;
+    margin-bottom: 2rem;
   }
 }
 
@@ -230,7 +273,7 @@
 }
 
 :root {
-  --accent: rgb(245, 164, 0);
+  --accent: #f5a300;
   --primary: rgb(236, 5, 52);
   --dark: rgb(0, 0, 0);
   --semi-primary: rgba(236, 5, 52, .5);

@@ -1,0 +1,30 @@
+.projects {
+  @media (min-width: 960px) {
+    .project {
+      .project__details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0;
+        transition: grid-template-rows 500ms;
+        overflow: hidden;
+    
+        .project__details__image {
+          height: 377px;
+          background-size: cover;
+          background-position: center;
+        }
+    
+        .project__details__description {
+          padding: 4rem;
+        }
+      }
+    
+      .project.active {
+        .project__details {
+          grid-template-rows: 1fr;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
