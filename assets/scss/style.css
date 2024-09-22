@@ -141,27 +141,132 @@
   text-decoration: underline;
   text-transform: toggler__uppercase;
 }
-.projects #projects-parle .project__details__image {
-  background-image: url("../../videos/parle-hover.jpg");
-}
 .projects #projects-parle.project.active .project__details__image {
-  -webkit-animation: presentation infinite alternate 6s;
-          animation: presentation infinite alternate 6s;
+  -webkit-animation: slider-parle infinite 8s;
+          animation: slider-parle infinite 8s;
 }
-@-webkit-keyframes presentation {
-  35% {
-    background-image: url("../../videos/parle-middle.jpg");
+.projects #projects-ads.project.active .project__details__image {
+  -webkit-animation: slider-ads infinite 8s;
+          animation: slider-ads infinite 8s;
+}
+.projects #projects-foom.project.active .project__details__image {
+  -webkit-animation: slider-foom infinite 8s;
+          animation: slider-foom infinite 8s;
+}
+.projects #projects-emo.project.active .project__details__image {
+  -webkit-animation: slider-emo infinite 8s;
+          animation: slider-emo infinite 8s;
+}
+@-webkit-keyframes slider-parle {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-1.png");
   }
-  65% {
-    background-image: url("../../videos/parle-last.jpg");
+  50% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-4.png");
   }
 }
-@keyframes presentation {
-  35% {
-    background-image: url("../../videos/parle-middle.jpg");
+@keyframes slider-parle {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-1.png");
   }
-  65% {
-    background-image: url("../../videos/parle-last.jpg");
+  50% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-4.png");
+  }
+}
+@-webkit-keyframes slider-ads {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-1.png");
+  }
+  50% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-4.png");
+  }
+}
+@keyframes slider-ads {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-1.png");
+  }
+  50% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-4.png");
+  }
+}
+@-webkit-keyframes slider-foom {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-1.png");
+  }
+  50% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-4.png");
+  }
+}
+@keyframes slider-foom {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-1.png");
+  }
+  50% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-4.png");
+  }
+}
+@-webkit-keyframes slider-emo {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-1.png");
+  }
+  50% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-4.png");
+  }
+}
+@keyframes slider-emo {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-1.png");
+  }
+  50% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-4.png");
   }
 }
 .projects .project.active {
@@ -899,7 +1004,7 @@ header h1 .square:last-of-type {
 }
 @media (min-width: 920px) {
   header {
-    padding-bloch: 1.5em;
+    padding-block: 1.5em;
   }
 }
 

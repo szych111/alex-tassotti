@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'sass:list';
+
 .projects {
   margin-block: 3rem;
 
@@ -95,27 +98,41 @@
     }
   }
 
+  $projects: "parle", "ads", "foom", "emo";
 
-  #projects-parle {
-    .project__details__image {
-      background-image: url('../../videos/parle-hover.jpg');
-    }
+  @each $name in $projects {
+    #projects-#{$name} {
+      // .project__details__image {
+      //   background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-1.png");
+      // }
 
-    &.project.active {
-      .project__details__image {
-        animation: presentation infinite alternate 6s;
 
+      &.project.active {
+        .project__details__image {
+          animation: slider-#{$name} infinite 8s;
+
+        }
       }
     }
   }
 
-  @keyframes presentation {
-    35% {
-      background-image: url('../../videos/parle-middle.jpg');
-    }
+  @each $name in $projects {
+    @keyframes slider-#{$name} {
+      0% {
+        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-1.png");
+      }
 
-    65% {
-      background-image: url('../../videos/parle-last.jpg');
+      50% {
+        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-2.png");
+      }
+
+      75% {
+        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-3.png");
+      }
+
+      100% {
+        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-4.png");
+      }
     }
   }
 
