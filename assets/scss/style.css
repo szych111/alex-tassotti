@@ -63,20 +63,34 @@
   margin-block: 3rem;
 }
 .projects h2 {
-  font-size: clamp(2rem, 2rem + 1vw, 2.75rem);
-}
-.projects .project {
-  border-bottom: 6px solid var(--accent);
-  padding-block: 2em;
+  font-size: clamp(2rem, 2rem + 1vw, 2.5rem);
+  margin-bottom: 1em;
 }
 .projects .project .project__header {
-  display: flex;
-  justify-content: space-between;
-  color: var(--primary);
+  color: var(--dark);
   font-family: "Lato", sans-serif;
-  align-items: end;
   padding: 0 0.5rem 2rem 0;
+  margin-bottom: 3rem;
+  border-bottom: 4px solid var(--accent);
+  position: relative;
   cursor: pointer;
+  transition: padding 300ms;
+}
+.projects .project .project__header::after {
+  --width: 2.125rem;
+  --border: .25rem;
+  content: "";
+  position: absolute;
+  bottom: calc(var(--width) * -0.5 - 3px);
+  right: 10%;
+  transform: rotate(45deg);
+  width: var(--width);
+  height: var(--width);
+  color: var(--accent);
+  background-color: white;
+  border-right: var(--border) solid var(--accent);
+  border-bottom: var(--border) solid var(--accent);
+  transition: all 300ms;
 }
 .projects .project .project__header h3,
 .projects .project .project__header h4 {
@@ -88,34 +102,15 @@
   margin-bottom: 0.5rem;
 }
 .projects .project .project__header h3 {
-  font-size: clamp(1.5rem, 1.5rem + 3.5vw, 4rem);
+  font-size: clamp(1.5rem, 1.5rem + 5vw, 4.5rem);
   font-weight: 900;
 }
-.projects .project .project__header .toggler {
-  --size: 3.5rem;
-  width: var(--size);
-  height: 66px;
-  padding-block: 0;
+.projects .project .project__header .project__header__border {
+  border: 4px solid var(--primary);
+  transition: all 500ms;
 }
-.projects .project .project__header .toggler .toggler__upper,
-.projects .project .project__header .toggler .toggler__lower {
-  transition: all 500ms ease;
-}
-.projects .project .project__header .toggler .toggler__upper {
+.projects .project .project__header:hover .project__header__border {
   transform: translateY(0.5rem);
-}
-.projects .project .project__header .toggler .toggler__lower {
-  transform: translateY(-2rem);
-}
-@-webkit-keyframes rotate {
-  100% {
-    transform: rotate(180deg);
-  }
-}
-@keyframes rotate {
-  100% {
-    transform: rotate(180deg);
-  }
 }
 .projects .project .project__details {
   display: grid;
@@ -128,6 +123,7 @@
   height: 377px;
   background-size: cover;
   background-position: center;
+  border: 2rem solid white;
 }
 .projects .project .project__details .project__details__description {
   color: white;
@@ -140,6 +136,21 @@
 .projects .project .project__details .project__details__description a {
   text-decoration: underline;
   text-transform: toggler__uppercase;
+}
+.projects .project.active {
+  border-bottom: 0;
+}
+.projects .project.active .project__details {
+  grid-template-rows: 2fr;
+  margin-bottom: 2rem;
+}
+.projects .project.active .project__header::after {
+  --border: 4px;
+  transform: rotate(225deg);
+  bottom: calc(var(--width) * -0.5 - 1px);
+}
+.projects .project.active .toggler {
+  transform: translateY(0.125rem) rotate(180deg);
 }
 .projects #projects-parle.project.active .project__details__image {
   -webkit-animation: slider-parle infinite 8s;
@@ -269,19 +280,6 @@
     background-image: url("../../assets/images/projects-sliders/emo/emo-4.png");
   }
 }
-.projects .project.active {
-  border-bottom: 0;
-}
-.projects .project.active .project__details {
-  grid-template-rows: 2fr;
-  margin-bottom: 2rem;
-}
-.projects .project.active .toggler {
-  transform: translateY(0.125rem) rotate(180deg);
-}
-.projects .project.active .project__header {
-  color: var(--accent);
-}
 
 @media (min-width: 960px) {
   .projects .project .project__details {
@@ -379,8 +377,8 @@
 
 :root {
   --accent: #f5a300;
-  --primary: rgb(236, 5, 52);
-  --dark: rgb(0, 0, 0);
+  --primary: #ec0534;
+  --dark: #00246C;
   --semi-primary: rgba(236, 5, 52, .5);
   --semi-accent: rgba(211, 197, 169, 0.65);
   --semi-accent: rgba(245, 164, 0, .5);
@@ -912,12 +910,6 @@ a:focus-visible {
   transform: scale(1.1);
 }
 
-/* project specific styles */
-body {
-  font-family: "Playfair Display", serif;
-  font-size: 0.875rem;
-}
-
 button {
   border: none;
   background-color: transparent;
@@ -929,10 +921,10 @@ button {
 }
 
 body {
+  font-family: "Playfair Display", serif;
+  font-size: 0.875rem;
+  color: var(--dark);
   padding: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 body > div {
   padding: 0.75rem 1.5rem 0.125rem;
