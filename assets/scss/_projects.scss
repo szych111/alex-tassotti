@@ -7,18 +7,16 @@
   h2 {
     font-size: clamp(2rem, 2rem + 1vw, 2.5rem);
     margin-bottom: 1em;
-    //color: var(--primary);
-    //font-family: 'Lato', sans-serif;
   }
 
   .project {
+    margin-block: 3rem;
+
     .project__header {
-      // display: flex;
-      // justify-content: space-between;
       color: var(--dark);
       font-family: 'Lato', sans-serif;
-      padding: 0 .5rem 2rem 0;
-      margin-bottom: 3rem;
+      padding: 0 .5rem 1rem 0;
+      margin-bottom: 2rem;
       border-bottom: 4px solid var(--accent);
       position: relative;
       cursor: pointer;
@@ -49,7 +47,6 @@
 
       h4 {
         font-size: clamp(1rem, 1rem + .5vw, 1.25rem);
-        margin-bottom: 0.5rem;
       }
 
       h3 {
@@ -57,29 +54,29 @@
         font-weight: 900;
       }
 
-      &:hover::after {
-        transform: translate(2px, 5px);
+      &:hover::after,
+      &:focus-visible::after {
+        transform: translate(2px, -15px) rotate(45deg);
       }
+
     }
 
     .project__details {
       display: grid;
-      //grid-template-columns: 1fr;
-      grid-template-rows: 0;
+      //grid-template-rows: 0fr;
+      grid-template-rows: 2fr 1fr;
       transition: grid-template-rows 500ms;
-      overflow: hidden;
 
       .project__details__image {
-        height: 377px;
         background-size: cover;
         background-position: center;
-        border: 2rem solid white;
       }
 
       .project__details__description {
+        max-width: 100%;
         color: white;
         background-color: var(--primary);
-        padding: 1em;
+        padding: 2em;
 
         p {
           margin-bottom: 2em;
@@ -99,7 +96,7 @@
     border-bottom: 0;
 
     .project__details {
-      grid-template-rows: 2fr;
+      //grid-template-rows: 2fr 1fr;
       margin-bottom: 2rem;
     }
 
@@ -115,19 +112,15 @@
     .toggler {
       transform: translateY(.125rem) rotate(180deg);
     }
-
-    // .project__header {
-    //   color: var(--primary);
-    // }
   }
 
   $projects: "parle", "ads", "foom", "emo";
 
   @each $name in $projects {
     #projects-#{$name} {
-      // .project__details__image {
-      //   background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-1.png");
-      // }
+      .project__details__image {
+        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-1.png");
+      }
 
 
       &.project.active {
@@ -141,21 +134,21 @@
 
   @each $name in $projects {
     @keyframes slider-#{$name} {
-      0% {
-        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-1.png");
-      }
+      // 0% {
+      //   background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-1.png");
+      // }
 
       50% {
         background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-2.png");
       }
 
-      75% {
-        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-3.png");
-      }
+      // 75% {
+      //   background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-3.png");
+      // }
 
-      100% {
-        background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-4.png");
-      }
+      // 100% {
+      //   background-image: url("../../assets/images/projects-sliders/#{$name}/#{$name}-4.png");
+      // }
     }
   }
 }

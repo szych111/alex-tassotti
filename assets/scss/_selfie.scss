@@ -1,18 +1,18 @@
-
 .selfie-wrapper {
-  display: grid;
-  place-items: center;
+  --size: 13.5rem;
+  --gauge: .6;
+  --total: calc(var(--size) * 1.6);
+
+  padding-block: calc(var(--size) * (var(--gauge) * .7));
 
   .face {
-    --size: 13.5rem;
-
     background-color: white;
     width: var(--size);
     height: var(--size);
     position: relative;
     border: 1px solid var(--semi-accent);
     border-top: .75rem solid var(--semi-accent);
-    //box-shadow: 1px 1px 2px rgba(236, 5, 52, .4);
+    margin-left: auto;
 
     &,
     .bun {
@@ -35,13 +35,12 @@
       &>* {
         width: calc(.085 * var(--size));
         height: calc(.085 * var(--size));
-        background-color: black;
+        background-color: var(--dark);
         border-radius: 50%;
       }
     }
 
     .bun {
-      --gauge: .6;
       background-color: var(--accent);
       width: calc(var(--size) * var(--gauge));
       height: calc(var(--size) * var(--gauge));
@@ -68,5 +67,57 @@
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
     }
+  }
+}
+
+@keyframes winking {
+
+  4%,
+  15% {
+    transform: scaleY(.3);
+  }
+
+  8%,
+  25% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes falling-glasses {
+  0% {
+    transform: rotate(0);
+  }
+
+  10%,
+  10.5% {
+    transform: rotate(109deg);
+  }
+
+  17% {
+    transform: rotate(70deg);
+  }
+
+  22% {
+    transform: rotate(108deg);
+  }
+
+  28% {
+    transform: rotate(72deg);
+  }
+
+  34% {
+    transform: rotate(105deg);
+  }
+
+  40% {
+    transform: rotate(74deg);
+  }
+
+  46% {
+    transform: rotate(102deg);
+  }
+
+  52% {
+    transform: rotate(0);
   }
 }
