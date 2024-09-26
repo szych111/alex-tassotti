@@ -77,7 +77,6 @@
   border-bottom: 4px solid var(--accent);
   position: relative;
   cursor: pointer;
-  transition: padding 300ms;
 }
 .projects .project .project__header::after {
   --width: 2.125rem;
@@ -112,32 +111,37 @@
 }
 .projects .project .project__details {
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 0fr;
   transition: grid-template-rows 500ms;
   transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
 }
 .projects .project .project__details .project__details__image {
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 .projects .project .project__details .project__details__description {
   max-width: 100%;
   color: white;
   background-color: var(--primary);
   padding: 2em;
+  overflow: hidden;
 }
 .projects .project .project__details .project__details__description p {
   margin-bottom: 2em;
 }
 .projects .project .project__details .project__details__description a {
   text-decoration: underline;
-  text-transform: toggler__uppercase;
 }
-.projects .project.active {
-  border-bottom: 0;
+.projects .project.active .project__details__image {
+  aspect-ratio: 1.7;
 }
 .projects .project.active .project__details {
+  grid-template-rows: auto;
   margin-bottom: 2rem;
+  transform: scaleY(1);
+  opacity: 1;
+  height: auto;
 }
 .projects .project.active .project__header::after {
   --border: 4px;
@@ -176,43 +180,115 @@
           animation: slider-emo infinite 8s;
 }
 @-webkit-keyframes slider-parle {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/parle/parle-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-4.png");
   }
 }
 @keyframes slider-parle {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/parle/parle-2.png");
   }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/parle/parle-4.png");
+  }
 }
 @-webkit-keyframes slider-ads {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/ads/ads-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-4.png");
   }
 }
 @keyframes slider-ads {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/ads/ads-2.png");
   }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/ads/ads-4.png");
+  }
 }
 @-webkit-keyframes slider-foom {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/foom/foom-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-4.png");
   }
 }
 @keyframes slider-foom {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/foom/foom-2.png");
   }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/foom/foom-4.png");
+  }
 }
 @-webkit-keyframes slider-emo {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/emo/emo-2.png");
   }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-4.png");
+  }
 }
 @keyframes slider-emo {
+  0% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-1.png");
+  }
   50% {
     background-image: url("../../assets/images/projects-sliders/emo/emo-2.png");
+  }
+  75% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-3.png");
+  }
+  100% {
+    background-image: url("../../assets/images/projects-sliders/emo/emo-4.png");
   }
 }
 
