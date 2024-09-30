@@ -110,10 +110,14 @@
   transform: translate(2px, -15px) rotate(45deg);
 }
 .projects .project .project__details {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 500ms;
-  transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
+  transform: scaleY(0);
+  transform-origin: top;
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+  position: relative;
+  transition: opacity 250ms, transform 500ms;
+  transition: opacity 50 0ms, transform 500ms;
 }
 .projects .project .project__details .project__details__image {
   background-size: cover;
@@ -137,11 +141,11 @@
   aspect-ratio: 1.7;
 }
 .projects .project.active .project__details {
-  grid-template-rows: auto;
   margin-bottom: 2rem;
   transform: scaleY(1);
   opacity: 1;
   height: auto;
+  transition: opacity 750ms, transform 500ms;
 }
 .projects .project.active .project__header::after {
   --border: 4px;
@@ -320,8 +324,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0;
-    transition: grid-template-rows 500ms;
-    transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
+    transition: grid-template-rows 500ms overflow 500ms;
+    transition: grid-template-rows 500ms overflow 500ms, -ms-grid-rows 500ms overflow 500ms;
     overflow: hidden;
   }
   .projects .project .project__details .project__details__image {
@@ -332,7 +336,7 @@
   .projects .project .project__details .project__details__description {
     padding: 4rem;
   }
-  .projects .project .project.active .project__details {
+  .projects .project.active .project__details {
     grid-template-rows: 1fr;
     margin-bottom: 2rem;
   }

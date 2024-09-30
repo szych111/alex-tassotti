@@ -61,18 +61,14 @@
     }
 
     .project__details {
-      display: grid;
-      // grid-template-columns: 1fr 1fr;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 500ms;
-      // transform: scaleY(0);
-      // transform-origin: top;
-      // height: 0;
-      // opacity: 0;
-      // z-index: -1;
-      // position: relative;
-      // transition: opacity 500ms, transform 750ms;
-      // transition: opacity 750ms, transform 50 0ms;
+      transform: scaleY(0);
+      transform-origin: top;
+      height: 0;
+      opacity: 0;
+      z-index: -1;
+      position: relative;
+      transition: opacity 250ms, transform 500ms;
+      transition: opacity 50 0ms, transform 500ms;
 
       .project__details__image {
         background-size: cover;
@@ -108,12 +104,11 @@
     }
 
     .project__details {
-      // grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
       margin-bottom: 2rem;
       transform: scaleY(1);
       opacity: 1;
       height: auto;
+      transition: opacity 750ms, transform 500ms;
     }
 
     .project__header::after {

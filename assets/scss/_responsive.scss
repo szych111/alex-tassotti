@@ -6,7 +6,6 @@
   .intro {
     display: flex;
     gap: 2rem;
-    //justify-content: space-between;
 
     &>* {
       flex-basis: 100%;
@@ -14,6 +13,7 @@
 
     .selfie-wrapper {
       flex-grow: 1;
+
       .face {
         margin-inline: auto;
       }
@@ -35,7 +35,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 0;
-        transition: grid-template-rows 500ms;
+        transition: grid-template-rows 500ms overflow 500ms;
         overflow: hidden;
 
         .project__details__image {
@@ -49,7 +49,7 @@
         }
       }
 
-      .project.active {
+      &.active {
         .project__details {
           grid-template-rows: 1fr;
           margin-bottom: 2rem;
