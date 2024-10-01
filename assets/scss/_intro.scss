@@ -1,0 +1,39 @@
+.intro {
+  margin-block: 3rem;
+  font-size: 1rem;
+  gap: 2rem;
+
+  &>* {
+    //background-color: greenyellow;
+    //text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .intro__img img {
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  quote {
+    font-size: 3rem;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: -1.825ch;
+      left: -.75ch;
+      color: var(--primary);
+      font-size: 15rem;
+      letter-spacing: -.125ch;
+    }
+
+    p {
+      line-height: 1.2;
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    margin-bottom: .375em;
+  }
+}

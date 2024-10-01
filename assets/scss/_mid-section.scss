@@ -1,0 +1,13 @@
+.mid-section {
+  @media (min-width: 920px) {
+    margin-block: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 3rem;
+
+    .selfie-wrapper {
+      flex-grow: 1;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 :root {
   --accent: #f5a300;
-  --primary: #ec0534;
+  --primary: hsl(348, 96%, 47%);
   --dark: #00246C;
   --dark: #011235;
   --semi-primary: rgba(236, 5, 52, .5);
@@ -18,6 +18,10 @@
   --handwirtten: "adobe-handwriting-ernie", sans-serif;
   --transition: 500ms ease-out;
   --handwritten: adobe-handwriting-ernie, sans-serif;
+  --shadow: 1px 2px 2px 2px hsl(0 0% 93%);
+  --text-lighter: hsl(210 50% 95%);
+  --text-light: hsl(348 0% 98%);
+
 
   @media (min-width: 920px) {
     --font-size: 1rem;
@@ -28,9 +32,9 @@
   color: var(--accent);
 }
 
-// .text-primary {
-//   color: var(--primary);
-// }
+.text-primary {
+  color: var(--primary);
+}
 
 .text-capitalize {
   text-transform: capitalize;

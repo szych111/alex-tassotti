@@ -10,9 +10,10 @@
     width: var(--size);
     height: var(--size);
     position: relative;
-    border: 1px solid var(--semi-accent);
     border-top: .75rem solid var(--semi-accent);
-    margin-left: auto;
+    margin-inline: auto;
+    box-shadow: var(--shadow);
+    ;
 
     &,
     .bun {

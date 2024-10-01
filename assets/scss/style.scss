@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
+@import "footer";
+@import "intro";
+@import "mid-section";
 @import "slider";
+@import "scroller";
 @import "projects";
 @import "responsive";
 @import "selfie";
@@ -18,26 +22,20 @@
 body,
 h1,
 h2,
-h3,
-h4,
 p {
   margin: 0;
 }
 
-p {
-  line-height: 1.5;
-  margin-bottom: .375em;
-}
-
 img,
 picture {
-  width: 100%;
-  height: auto;
+  inline-size: 100%;
+  block-size: 100%;
   vertical-align: middle;
   font-style: italic;
   color: var(--dark);
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
   shape-margin: .75rem;
 }
 
@@ -74,6 +72,7 @@ body {
   font-size: .875rem;
   color: var(--dark);
   padding: 1rem;
+  background-color: var(--text-light);
 
   &>div {
     //background-color: rgba(#493a27, 0.6);
@@ -82,110 +81,28 @@ body {
   }
 }
 
-main {
-  .intro {
-    margin-block: 3rem;
-    font-size: 1rem;
-    gap: 2rem;
-
-    &>* {
-      //background-color: greenyellow;
-      //text-align: left;
-      margin-bottom: 2rem;
-    }
-
-    .intro__img img {
-      border-radius: 2rem;
-    }
-
-    p {
-      line-height: 1.75;
-
-      span {
-        color: var(--primary);
-
-        [data-span] {
-          margin-inline: .25em;
-          //color: var(--accent);
-          transition: color 300ms ease-in;
-          cursor: pointer;
-
-          &:hover,
-          &:focus-visible {
-            color: var(--primary);
-          }
-        }
-      }
-
-      [data-span=nonsense] {
-        font-family: adobe-handwriting-ernie, sans-serif;
-        color: var(--accent);
-      }
-    }
-  }
-}
-
 /* header */
 
 header {
-  h1 {
-    font-size: 1.5rem;
-    font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
 
-    .square {
-      content: "";
-      background-color: var(--primary);
-      height: 0.5em;
-      width: 0.5em;
-      display: inline-block;
-      margin-bottom: 0.125rem;
-      margin-right: .875em;
+  .square {
+    content: "";
+    background-color: var(--primary);
+    height: 0.5em;
+    width: 0.5em;
+    display: inline-block;
+    margin-bottom: 0.125rem;
+    margin-right: .875em;
 
-      &:last-of-type {
-        margin-left: .875em;
-      }
+    &:last-of-type {
+      margin-left: .875em;
     }
   }
 
   @media (min-width: 920px) {
-    padding-block: 1.5em;
-  }
-}
-
-/* content */
-
-h2 {
-  //font-family: var(--handwritten);
-  //font-size: 1.75rem;
-  //color: var(--accent);
-  position: relative;
-  z-index: 2;
-}
-
-/* footer */
-footer {
-  text-align: center;
-  margin-block: 3rem;
-
-  .contact-wrapper {
-    border-radius: .25rem;
-    margin: .5rem;
-    padding: .25rem .5rem .125rem;
-    background-color: var(--primary);
-    fill: var(--light);
-    fill: white;
-    display: inline-block;
-
-    @media (min-width: 768px) {
-      padding: .25rem .375rem .125rem;
-      padding: .325rem .4rem .125rem;
-      margin-inline: 1rem;
-
-      svg {
-        --svg: 1.25rem;
-        width: var(--svg);
-        height: var(--svg);
-      }
-    }
+    padding-bottom: 1.5em;
   }
 }

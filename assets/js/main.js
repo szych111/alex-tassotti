@@ -15,6 +15,17 @@ projectDetailsTogglers.forEach((toggler) => {
   });
 });
 
+demo.onclick = (event) => {
+  let target = event.target.closest(".item");
+
+  if (target) {
+    demo.scrollTo({
+      left: target.offsetLeft,
+      behavior: "smooth",
+    });
+  }
+};
+
 //import Swiper from "swiper";
 //import Swiper from "../../node_modules/swiper";
 //import { Navigation } from "../../node_modules/swiper/modules/navigation";

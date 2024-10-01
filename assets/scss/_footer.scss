@@ -1,0 +1,24 @@
+footer {
+  text-align: center;
+  margin-block: 3rem;
+
+  .contact-wrapper {
+    border-radius: .25rem;
+    margin: .5rem;
+    padding: .25rem .5rem .125rem;
+    background-color: var(--accent);
+    fill: var(--text-light);
+    display: inline-block;
+
+    @media (min-width: 768px) {
+      padding: .375rem .5rem .125rem;
+      margin-inline: 1rem;
+
+      svg {
+        --svg: 1.5rem;
+        width: var(--svg);
+        height: var(--svg);
+      }
+    }
+  }
+}

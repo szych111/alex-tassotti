@@ -1,4 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
+footer {
+  text-align: center;
+  margin-block: 3rem;
+}
+footer .contact-wrapper {
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+  padding: 0.25rem 0.5rem 0.125rem;
+  background-color: var(--accent);
+  fill: var(--text-light);
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  footer .contact-wrapper {
+    padding: 0.375rem 0.5rem 0.125rem;
+    margin-inline: 1rem;
+  }
+  footer .contact-wrapper svg {
+    --svg: 1.5rem;
+    width: var(--svg);
+    height: var(--svg);
+  }
+}
+
+.intro {
+  margin-block: 3rem;
+  font-size: 1rem;
+  gap: 2rem;
+}
+.intro > * {
+  margin-bottom: 2rem;
+}
+.intro .intro__img img {
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+}
+.intro quote {
+  font-size: 3rem;
+  position: relative;
+}
+.intro quote span {
+  position: absolute;
+  top: -1.825ch;
+  left: -0.75ch;
+  color: var(--primary);
+  font-size: 15rem;
+  letter-spacing: -0.125ch;
+}
+.intro quote p {
+  line-height: 1.2;
+}
+.intro p {
+  line-height: 1.5;
+  margin-bottom: 0.375em;
+}
+
+@media (min-width: 920px) {
+  .mid-section {
+    margin-block: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 3rem;
+  }
+  .mid-section .selfie-wrapper {
+    flex-grow: 1;
+  }
+}
+
 .carousel {
   position: relative;
   height: 310px;
@@ -57,6 +126,81 @@
 
 .is-hidden {
   display: none;
+}
+
+h1 {
+  font-size: max(10vw, 5em);
+  letter-spacing: 0.125ch;
+  /* regular text-shadow */
+  /* text-shadow highlight */
+}
+
+h1,
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+h2 {
+  padding-bottom: 1em;
+  letter-spacing: 0.05ch;
+  font-size: max(3vw, 3em);
+  text-decoration: none;
+}
+
+.horizontal-scroller-container {
+  --size: min(65vw, 500px);
+  --gap: 2rem;
+  --text-lighter: hsl(210 50% 95%);
+  --text-light: hsl(0 0% 50%);
+  padding: 0 min(1vw, var(--gap)) 5rem;
+}
+.horizontal-scroller-container .horizontal-scroller {
+  padding-bottom: 3rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--size);
+  gap: var(--gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -ms-scroll-snap-type: x proximity;
+      scroll-snap-type: x proximity;
+  scroll-padding-inline-start: var(--gap);
+}
+.horizontal-scroller-container .horizontal-scroller .description {
+  background-color: var(--primary);
+  color: var(--text-lighter);
+  padding: max(5vw, 1rem);
+}
+.horizontal-scroller-container .horizontal-scroller .description p {
+  line-height: 1.75;
+  margin-bottom: 2em;
+}
+.horizontal-scroller-container .horizontal-scroller > * {
+  scroll-snap-align: start;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.horizontal-scroller-container .horizontal-scroller figure {
+  margin: 0;
+  display: grid;
+  background-image: linear-gradient(to bottom, hsl(210deg, 0%, 97%), hsl(210deg, 0%, 99%));
+}
+.horizontal-scroller-container .horizontal-scroller figure picture {
+  border-radius: var(--gap);
+  overflow: hidden;
+}
+.horizontal-scroller-container .horizontal-scroller figure img {
+  inline-size: 100%;
+  block-size: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .projects {
@@ -296,6 +440,142 @@
   }
 }
 
+.scroll-stack-container h1 {
+  cursor: pointer;
+}
+.scroll-stack-container .scroll-stack-wrapper {
+  display: grid;
+  grid-template-rows: 1;
+  transition: grid-template-rows 500ms;
+  transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
+}
+.scroll-stack-container .scroll-stack-wrapper .scroll-stack {
+  overflow-y: hidden;
+}
+.scroll-stack-container:hover .scroll-stack-wrapper, .scroll-stack-container:focus-visible .scroll-stack-wrapper {
+  grid-template-rows: 1;
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    transform: translateX(-100cqi) scale(0.75);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100cqi) scale(0.75);
+  }
+}
+.scroll-stack {
+  container-type: inline-size;
+  inline-size: 100cqi;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
+  gap: 1rem;
+  padding-inline: 1rem;
+  scroll-padding-inline: 1rem;
+  padding-block: 30px 60px;
+  /* the before and afters have unsnappable elements that create bouncy edges to the scroll */
+  /* 
+    snap on the item, which is untransformed
+    also order is changed so last item is on top
+  */
+  /* 
+    magic is here, a child of the snapped item 
+    animates items as they cross the viewport view()
+    range is set to create the effect
+  */
+}
+.scroll-stack::before, .scroll-stack::after {
+  content: "";
+  display: block;
+}
+.scroll-stack::before {
+  order: 0;
+  inline-size: 25cqi;
+}
+.scroll-stack::after {
+  order: 11;
+  inline-size: 80cqi;
+}
+.scroll-stack .item {
+  scroll-snap-align: start;
+}
+.scroll-stack .item:nth-child(1) {
+  order: 10;
+  z-index: 1;
+}
+.scroll-stack .item:nth-child(2) {
+  order: 9;
+  z-index: 2;
+}
+.scroll-stack .item:nth-child(3) {
+  order: 8;
+  z-index: 3;
+}
+.scroll-stack .item:nth-child(4) {
+  order: 7;
+  z-index: 4;
+}
+.scroll-stack .item:nth-child(5) {
+  order: 6;
+  z-index: 5;
+}
+.scroll-stack .item:nth-child(6) {
+  order: 5;
+  z-index: 6;
+}
+.scroll-stack .item:nth-child(7) {
+  order: 4;
+  z-index: 7;
+}
+.scroll-stack .item:nth-child(8) {
+  order: 3;
+  z-index: 8;
+}
+.scroll-stack .item:nth-child(9) {
+  order: 2;
+  z-index: 9;
+}
+.scroll-stack figure {
+  flex-shrink: 0;
+  block-size: 80cqb;
+  aspect-ratio: 9/16;
+  background: light-dark(#ccc, #444);
+  box-shadow: 2px 2px 2px rgba(200, 197, 197, 0.6);
+  border-radius: 20px;
+  overflow: clip;
+  display: flex;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-stack figure {
+      -webkit-animation: slide-in linear both;
+              animation: slide-in linear both;
+      animation-timeline: view(x);
+      animation-range: cover -75cqi contain 20cqi;
+      animation-range: cover -75cqi contain 20cqi;
+    }
+  }
+}
+@container (width < 480px) {
+  .scroll-stack figure {
+    block-size: 50cqb;
+  }
+}
+.scroll-stack figure > img {
+  inline-size: 100%;
+  block-size: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media (min-width: 960px) {
   body {
     padding: 0.75rem 1.5rem 0.125rem;
@@ -340,9 +620,6 @@
     grid-template-rows: 1fr;
     margin-bottom: 2rem;
   }
-  footer .contact-wrapper {
-    padding: 0.125rem 0.5rem;
-  }
 }
 .selfie-wrapper {
   --size: 13.5rem;
@@ -355,9 +632,9 @@
   width: var(--size);
   height: var(--size);
   position: relative;
-  border: 1px solid var(--semi-accent);
   border-top: 0.75rem solid var(--semi-accent);
-  margin-left: auto;
+  margin-inline: auto;
+  box-shadow: var(--shadow);
 }
 .selfie-wrapper .face,
 .selfie-wrapper .face .bun {
@@ -493,7 +770,7 @@
 }
 :root {
   --accent: #f5a300;
-  --primary: #ec0534;
+  --primary: hsl(348, 96%, 47%);
   --dark: #00246C;
   --dark: #011235;
   --semi-primary: rgba(236, 5, 52, .5);
@@ -510,6 +787,9 @@
   --handwirtten: "adobe-handwriting-ernie", sans-serif;
   --transition: 500ms ease-out;
   --handwritten: adobe-handwriting-ernie, sans-serif;
+  --shadow: 1px 2px 2px 2px hsl(0 0% 93%);
+  --text-lighter: hsl(210 50% 95%);
+  --text-light: hsl(348 0% 98%);
 }
 @media (min-width: 920px) {
   :root {
@@ -519,6 +799,10 @@
 
 .text-accent {
   color: var(--accent);
+}
+
+.text-primary {
+  color: var(--primary);
 }
 
 .text-capitalize {
@@ -903,26 +1187,21 @@
 body,
 h1,
 h2,
-h3,
-h4,
 p {
   margin: 0;
 }
 
-p {
-  line-height: 1.5;
-  margin-bottom: 0.375em;
-}
-
 img,
 picture {
-  width: 100%;
-  height: auto;
+  inline-size: 100%;
+  block-size: 100%;
   vertical-align: middle;
   font-style: italic;
   color: var(--dark);
   background-repeat: no-repeat;
   background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   shape-margin: 0.75rem;
 }
 
@@ -963,48 +1242,20 @@ body {
   font-size: 0.875rem;
   color: var(--dark);
   padding: 1rem;
+  background-color: var(--text-light);
 }
 body > div {
   max-width: 1600px;
   margin-inline: auto;
 }
 
-main .intro {
-  margin-block: 3rem;
-  font-size: 1rem;
-  gap: 2rem;
-}
-main .intro > * {
-  margin-bottom: 2rem;
-}
-main .intro .intro__img img {
-  border-radius: 2rem;
-}
-main .intro p {
-  line-height: 1.75;
-}
-main .intro p span {
-  color: var(--primary);
-}
-main .intro p span [data-span] {
-  margin-inline: 0.25em;
-  transition: color 300ms ease-in;
-  cursor: pointer;
-}
-main .intro p span [data-span]:hover, main .intro p span [data-span]:focus-visible {
-  color: var(--primary);
-}
-main .intro p [data-span=nonsense] {
-  font-family: adobe-handwriting-ernie, sans-serif;
-  color: var(--accent);
-}
-
 /* header */
-header h1 {
+header {
   font-size: 1.5rem;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
 }
-header h1 .square {
+header .square {
   content: "";
   background-color: var(--primary);
   height: 0.5em;
@@ -1013,44 +1264,11 @@ header h1 .square {
   margin-bottom: 0.125rem;
   margin-right: 0.875em;
 }
-header h1 .square:last-of-type {
+header .square:last-of-type {
   margin-left: 0.875em;
 }
 @media (min-width: 920px) {
   header {
-    padding-block: 1.5em;
-  }
-}
-
-/* content */
-h2 {
-  position: relative;
-  z-index: 2;
-}
-
-/* footer */
-footer {
-  text-align: center;
-  margin-block: 3rem;
-}
-footer .contact-wrapper {
-  border-radius: 0.25rem;
-  margin: 0.5rem;
-  padding: 0.25rem 0.5rem 0.125rem;
-  background-color: var(--primary);
-  fill: var(--light);
-  fill: white;
-  display: inline-block;
-}
-@media (min-width: 768px) {
-  footer .contact-wrapper {
-    padding: 0.25rem 0.375rem 0.125rem;
-    padding: 0.325rem 0.4rem 0.125rem;
-    margin-inline: 1rem;
-  }
-  footer .contact-wrapper svg {
-    --svg: 1.25rem;
-    width: var(--svg);
-    height: var(--svg);
+    padding-bottom: 1.5em;
   }
 }/*# sourceMappingURL=style.css.map */
