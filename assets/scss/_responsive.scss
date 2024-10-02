@@ -1,11 +1,8 @@
-@media (min-width: 960px) {
-  body {
-    padding: .75rem 1.5rem .125rem;
-  }
+@media (min-width:992px) {
 
   .intro {
     display: flex;
-    gap: 2rem;
+    gap: 14rem;
 
     &>* {
       flex-basis: 100%;

@@ -1,11 +1,8 @@
 .intro {
   margin-block: 3rem;
   font-size: 1rem;
-  gap: 2rem;
 
   &>* {
-    //background-color: greenyellow;
-    //text-align: left;
     margin-bottom: 2rem;
   }
 
@@ -14,26 +11,39 @@
     box-shadow: var(--shadow);
   }
 
-  quote {
-    font-size: 3rem;
-    position: relative;
+  .quote-container {
+    --space: 1.825ch;
+    --space: -.75ch;
+    --font: min(8vw, 3rem);
+    padding-top: calc(-2.5 * var(--space));
+    padding-left: calc(-3.5 * var(--space));
+    font-size: var(--font);
 
-    span {
-      position: absolute;
-      top: -1.825ch;
-      left: -.75ch;
-      color: var(--primary);
-      font-size: 15rem;
-      letter-spacing: -.125ch;
-    }
+    quote {
+      position: relative;
 
-    p {
-      line-height: 1.2;
+      span {
+        position: absolute;
+        top: calc(1.75 * var(--space));
+        left: var(--space);
+        color: var(--primary);
+        font-size: calc(4 * var(--font));
+        letter-spacing: -.125ch;
+      }
+
+      p {
+        letter-spacing: .05ch;
+      }
     }
   }
+}
+
+.intro-description {
+  line-height: 1.5;
+  letter-spacing: .025ch;
+  font-size: min(5vw, 2rem);
 
   p {
-    line-height: 1.5;
     margin-bottom: .375em;
   }
 }

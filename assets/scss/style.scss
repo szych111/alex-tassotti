@@ -1,16 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
+@import "colors";
 @import "footer";
 @import "intro";
 @import "mid-section";
-@import "slider";
-@import "scroller";
 @import "projects";
-@import "responsive";
+@import "scroller";
 @import "selfie";
-@import "utility-classes";
-@import "../../node_modules/swiper/swiper.scss";
-@import "../../node_modules/swiper/modules/navigation.scss";
-@import "../../node_modules/swiper/modules/autoplay.scss";
+@import "responsive";
 
 
 *,
@@ -48,15 +44,24 @@ select,
 }
 
 a {
-  text-decoration: none;
   color: currentColor;
+  transition: font-weight 350ms;
 }
 
 
 a:hover,
 a:focus-visible {
-  //opacity: .8;
-  transform: scale(1.1);
+  font-weight: 900;
+  outline: 0;
+}
+
+footer a {
+  transition: opacity 350ms;
+
+  &:hover,
+  &:focus-visible {
+    opacity: .6;
+  }
 }
 
 button {
@@ -75,16 +80,19 @@ body {
   background-color: var(--text-light);
 
   &>div {
-    //background-color: rgba(#493a27, 0.6);
     max-width: 1600px;
     margin-inline: auto;
+  }
+
+  @media (min-width: 992px) {
+    padding: .75rem 1.5rem .125rem;
   }
 }
 
 /* header */
 
 header {
-  font-size: 1.5rem;
+  font-size: min(5vw, 2rem);
   font-family: "Roboto", sans-serif;
   font-weight: 600;
 
@@ -103,6 +111,6 @@ header {
   }
 
   @media (min-width: 920px) {
-    padding-bottom: 1.5em;
+    padding: 1em 0 1.5em;
   }
 }

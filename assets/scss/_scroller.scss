@@ -1,11 +1,6 @@
 h1 {
   font-size: max(10vw, 5em);
   letter-spacing: .125ch;
-  //text-shadow:
-  /* regular text-shadow */
-  //0 4px 10px hsl(348 3% 82%),
-  /* text-shadow highlight */
-  //0 -1px 0 hsl(0 0% 99%);
 }
 
 h1,
@@ -17,21 +12,19 @@ h2 {
 
 h2 {
   padding-bottom: 1em;
+  padding-left: .5em;
   letter-spacing: .05ch;
-  font-size: max(3vw, 3em);
+  font-size: max(3vw, 2.25em);
   text-decoration: none;
-  //color: var(--primary);
 }
 
 
 .horizontal-scroller-container {
-  --size: min(65vw, 500px);
+  --size: min(68vw, 500px);
   --gap: 2rem;
   --text-lighter: hsl(210 50% 95%);
-  --text-light: hsl(0 0% 50%);
 
-  //background-color: hsl(210 10% 15%);
-  padding: 0 min(1vw, var(--gap)) 5rem;
+  padding: 0 min(1vw, var(--gap)) min(8vw, 6rem);
 
   .horizontal-scroller {
     padding-bottom: 3rem;
@@ -48,11 +41,22 @@ h2 {
     .description {
       background-color: var(--primary);
       color: var(--text-lighter);
-      padding: max(5vw, 1rem);
+      padding: min(5vw, 3em);
+      display: flex;
+      flex-direction: column;
+      font-size: .75rem;
+
+      @media (min-width: 992px) {
+        font-size: 1.25rem;
+      }
 
       p {
-        line-height: 1.75;
-        margin-bottom: 2em;
+        line-height: 1.5;
+        margin-bottom: 1em;
+      }
+
+      a {
+        margin-top: auto;
       }
     }
 
@@ -68,13 +72,10 @@ h2 {
     figure {
       margin: 0;
       display: grid;
-      //padding: min(1vw, var(--gap));
       background-image: linear-gradient(to bottom, hsl(210 0% 97%), hsl(210 0% 99%));
 
       picture {
         border-radius: var(--gap);
-        // inline-size: var(--size);
-        // block-size: auto;
         overflow: hidden;
       }
 

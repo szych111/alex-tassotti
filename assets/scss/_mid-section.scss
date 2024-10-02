@@ -1,13 +1,17 @@
 .mid-section {
-  @media (min-width: 920px) {
-    margin-block: 5rem;
+  margin-block: 2.5rem;
+
+  @media (min-width: 992px) {
+    margin-block: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    flex-direction: row-reverse;
     gap: 3rem;
 
     .selfie-wrapper {
       flex-grow: 1;
+      //order: 1;
     }
   }
 }

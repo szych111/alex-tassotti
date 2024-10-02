@@ -3,7 +3,7 @@
   --gauge: .6;
   --total: calc(var(--size) * 1.6);
 
-  padding-block: calc(var(--size) * (var(--gauge) * .7));
+  padding-block: calc(var(--size) * (var(--gauge)));
 
   .face {
     background-color: white;
