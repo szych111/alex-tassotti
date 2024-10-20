@@ -59,7 +59,7 @@ footer .contact-wrapper {
 }
 .intro .quote-container quote span {
   position: absolute;
-  top: calc(1.75 * var(--space));
+  top: calc(2.25 * var(--space));
   left: var(--space);
   color: var(--primary);
   font-size: calc(4 * var(--font));
@@ -616,8 +616,8 @@ h2 {
           animation-name: falling-glasses;
   -webkit-animation-duration: 6s;
           animation-duration: 6s;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  -webkit-animation-delay: 4500ms;
+          animation-delay: 4500ms;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
