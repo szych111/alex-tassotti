@@ -10,15 +10,6 @@ h2 {
   color: var(--accent);
 }
 
-h2 {
-  padding-bottom: 1em;
-  padding-left: .5em;
-  letter-spacing: .05ch;
-  font-size: max(3vw, 2.25em);
-  text-decoration: none;
-}
-
-
 .horizontal-scroller-container {
   --size: min(68vw, 500px);
   --gap: 2rem;
@@ -26,6 +17,14 @@ h2 {
 
   padding: 0 min(1vw, var(--gap)) min(8vw, 6rem);
 
+  h2 {
+    padding-bottom: 1em;
+    padding-left: .5em;
+    letter-spacing: .05ch;
+    font-size: max(3vw, 2.25em);
+    text-decoration: none;
+  }
+  
   .horizontal-scroller {
     padding-bottom: 3rem;
     display: grid;
@@ -72,6 +71,7 @@ h2 {
     figure {
       margin: 0;
       display: grid;
+      place-items: center;
       background-image: linear-gradient(to bottom, hsl(210 0% 97%), hsl(210 0% 99%));
 
       picture {
